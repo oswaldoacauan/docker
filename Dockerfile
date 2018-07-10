@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # RUN echo 'Acquire::http::Proxy "http://192.168.0.130:3142";'  > /etc/apt/apt.conf.d/01proxy
 RUN apt-get update && apt-get install -y wget
 
-RUN echo "deb http://ubuntu.bigbluebutton.org/xenial-220 bigbluebutton-xenial main " | tee /etc/apt/sources.list.d/bigbluebutton.list
+RUN echo "deb http://ubuntu.bigbluebutton.org/xenial-220-dev bigbluebutton-xenial main " | tee /etc/apt/sources.list.d/bigbluebutton.list
 RUN wget http://ubuntu.bigbluebutton.org/repo/bigbluebutton.asc -O- | apt-key add -
 RUN apt-get update && apt-get -y dist-upgrade
 
